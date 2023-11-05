@@ -1,16 +1,9 @@
-from ecdsa import SigningKey
-from ecdsa import SECP256k1
+import credential;
 
 def main():
-  secret_key = SigningKey.generate(curve=SECP256k1)
-  public_key = secret_key.get_verifying_key()
-  secret_key_str = secret_key.to_string().hex()
-  public_key_str = public_key.to_string().hex()
-  key = {
-    "secret_key": secret_key_str,
-    "public_key": public_key_str
-  }
-  print(key)
+  secret_key, public_key = credential.create_keys()
+  print("secret_key:" + secret_key)
+  print("public_key:" + public_key)
   
 if __name__ == "__main__":
   main()
