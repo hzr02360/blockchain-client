@@ -56,8 +56,8 @@ def main():
     arg['desc'])
   print(transaction)
   print(f"URL: {arg['url']}")
-  #res = requests.post(arg['url'], json.dumps(transaction))
-  #print(res)
+  res = requests.post(arg['url'], json.dumps(transaction))
+  print(res)
 
 if __name__ == "__main__":
   main()
