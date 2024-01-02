@@ -4,11 +4,10 @@ import sys
 import requests
 import json
 import datetime
-
 import yaml
-
 from credential import create_secret_key, create_signeture
 
+# シグネチャ付きのトランザクションデータを生成する
 def create_transaction(secret_key, sender_pub_key, reciever_pub_key, amount, desc):
   time = datetime.datetime.now().isoformat()
   unsigned_tran = {
@@ -32,6 +31,7 @@ def create_transaction(secret_key, sender_pub_key, reciever_pub_key, amount, des
   }
   return singed_tran
 
+# 引数チェック
 def check_arg():
   if (len(sys.argv) <= 1):
     print("parameter file is required.")
@@ -43,6 +43,7 @@ def check_arg():
     sys.exit(4)
   return yaml_file
 
+# トランザクションデータ登録クライアント
 def main():
   yaml_file = check_arg()
   with open(yaml_file, 'r') as f:
