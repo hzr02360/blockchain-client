@@ -4,6 +4,9 @@
 
 - 公開鍵と秘密鍵を生成するコマンド
 - ブロックチェーンサーバにトランザクションを登録するコマンド
+- こちらから派生しています  
+  https://github.com/moyattodataman/blockchain/tree/main
+
 
 ## 環境
 
